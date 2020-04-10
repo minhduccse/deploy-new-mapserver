@@ -67,4 +67,12 @@ Your url to mapserver for google map will be:
     http://your_hostname/cgi-bin/mapserv?map=/home/[user]/deploy-new-mapserver/mapserver-server/google_maps_demo.map&
 
 
+API table:
+Url to API is `your_hostname:3000` + `[url]`
+|Url|Type|Details|Sample Request|
+|--|--|--|--|
+|`/map/get/income`|GET|Get income map info||
+|`/map/get/population`|GET|Get population map info||
+|`/map/update/income`|POST|Update income color by id|`{"id":5, "color_type": STATIC", "color_value": "#0C2808"}`|
+|`/map/update/population`|POST|Update income color by id|`{"gid": 251, "population": 71000, "color_value": "#000000"}`|
 
