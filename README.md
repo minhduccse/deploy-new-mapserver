@@ -74,5 +74,5 @@ Url to API is `your_hostname:3000` + `[url]`
 |`/map/get/income`|GET|Get income map info||
 |`/map/get/population`|GET|Get population map info||
 |`/map/update/income`|POST|Update income color by id|`{"id":5, "color_type": STATIC", "color_value": "#0C2808"}`|
-|`/map/update/population`|POST|Update income color by id|`{"gid": 251, "population": 71000, "color_value": "#000000"}`|
+|`/map/update/population`|POST|Update population color by gid|`{"gid": 251, "population": 71000, "color_value": "#000000"}`|
 
