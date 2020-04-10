@@ -68,7 +68,10 @@ Your url to mapserver for google map will be:
 
 
 API table:
+
 Url to API is `your_hostname:3000` + `[url]`
+
+
 |Url|Type|Details|Sample Request|
 |--|--|--|--|
 |`/map/get/income`|GET|Get income map info||
