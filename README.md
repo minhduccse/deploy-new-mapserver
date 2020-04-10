@@ -45,7 +45,7 @@ Install dependency
 
      npm install
 
-**Config your connection in `db/esConnection` `db/pgConnection` and `cronjob/dropData.js` `cronjob/fetchData.js` line 7-10 and line 23**
+**Configure your connection in `db/esConnection` `db/pgConnection` and `cronjob/dropData.js` `cronjob/fetchData.js` line 7-10 and line 23**
 
 Run npm script to create tables
 
