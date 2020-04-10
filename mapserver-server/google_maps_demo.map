@@ -1,0 +1,91 @@
+MAP
+  SIZE 256 256
+  UNITS METERS
+  EXTENT -180 -90 180 90
+  NAME "test heat"
+  IMAGETYPE "png"
+
+  WEB
+    METADATA
+      "wms_srs"            "EPSG:4326 EPSG:3857"
+      "wms_enable_request" "*"
+      "wms_encoding"       "utf-8"
+    END # METADATA
+  END # WEB
+
+  PROJECTION
+    "+init=epsg:4326"
+  END # PROJECTION
+
+  LAYER
+    NAME "coverage"
+    TYPE raster
+    CONNECTIONTYPE kerneldensity
+    CONNECTION "points"
+    STATUS on
+    PROCESSING "RANGE_COLORSPACE=RGB"
+    PROCESSING "KERNELDENSITY_RADIUS=20"
+    PROCESSING "KERNELDENSITY_COMPUTE_BORDERS=ON"
+    PROCESSING "KERNELDENSITY_NORMALIZATION=NUMERIC"
+    OFFSITE 0 0 0
+    CLASS
+      STYLE
+        COLORRANGE  "#c8f08f"  "#5aa700"
+        DATARANGE 0 128
+      END # STYLE
+      STYLE
+        COLORRANGE  "#5aa700"  "#2d660a"
+        DATARANGE 128 255
+      END # STYLE
+    END # CLASS
+  END # LAYER
+
+  LAYER
+    NAME "income"
+    CONNECTIONTYPE postgis
+    CONNECTION "user=osm dbname=osm host=localhost password=osm port=5432"
+    PROCESSING "CLOSE_CONNECTION=DEFER"
+    DATA "geom from (SELECT * FROM ward_table LEFT JOIN (SELECT ward_table.gid, income_info.color_value, MIN(income_info.max_value) FROM income_info,ward_table WHERE income_info.max_value > ward_table.mean GROUP BY ward_table.gid, income_info.color_value) AS color_value ON ward_table.gid = color_value.gid) as subquery
+    using unique geom using srid=4326"
+    STATUS on
+    TYPE POLYGON
+    CLASS
+      NAME 'income_layer'
+      STYLE
+        OUTLINECOLOR "#ffffff"
+        WIDTH 0.1
+        COLOR [color_value]
+      END
+    END
+  END
+
+  LAYER
+    NAME "population"
+    CONNECTIONTYPE postgis
+    CONNECTION "user=osm dbname=osm host=localhost password=osm port=5432"
+    PROCESSING "CLOSE_CONNECTION=DEFER"
+    DATA "geom from (SELECT * FROM population_info INNER JOIN vnm_2 ON (population_info.gid = vnm_2.gid)) as subquery
+    using unique geom using srid=4326"
+    STATUS on
+    TYPE POLYGON
+    CLASS
+      NAME 'population_layer'
+      STYLE
+        OUTLINECOLOR "#ffffff"
+        WIDTH 0.1
+        COLOR [color_value]
+      END
+    END
+  END
+
+  LAYER
+    CONNECTIONTYPE postgis
+    NAME "points"
+    CONNECTION "user=osm dbname=osm host=localhost password=osm port=5432"
+    PROCESSING "CLOSE_CONNECTION=DEFER"
+    DATA "geom from (select * from vehicle) as subquery
+    using unique gid using srid=4326"
+    STATUS on
+    TYPE POINT
+  END # LAYER
+END # MAPFILE

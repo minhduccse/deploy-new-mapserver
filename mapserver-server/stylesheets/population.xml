@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- An ultra simple Mapnik stylesheet -->
+
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#00000000" buffer-size="256" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+    <Style name="step1">
+        <Rule>
+            <PolygonSymbolizer fill="#fdbb84" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Layer name="population_step1" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>step1</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/population/step1/step1.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Style name="step2">
+        <Rule>
+            <PolygonSymbolizer fill="#f8a21c" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Layer name="population_step2" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>step2</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/population/step2/step2.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Style name="step3">
+        <Rule>
+            <PolygonSymbolizer fill="#f28b20" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Layer name="population_step3" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>step3</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/population/step3/step3.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Style name="step4">
+        <Rule>
+            <PolygonSymbolizer fill="#f37536" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Layer name="population_step4" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>step4</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/population/step4/step4.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Style name="step5">
+        <Rule>
+            <PolygonSymbolizer fill="#ef4c22" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Layer name="population_step4" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>step5</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/population/step5/step5.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Style name="step6">
+        <Rule>
+            <PolygonSymbolizer fill="#eb1c24" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Layer name="population_step6" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>step5</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/population/step6/step6.shp</Parameter>
+        </Datasource>
+    </Layer>
+</Map>

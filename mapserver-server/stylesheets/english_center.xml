@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- An ultra simple Mapnik stylesheet -->
+
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#00000000" buffer-size="256" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+    <Style name="english_center_style">
+        <Rule>
+            <MarkersSymbolizer fill="#5F021F" file="../markers/english_center.svg" transform="translate(0 -16) scale(0.07)"/>
+        </Rule>
+    </Style>
+    <Layer name="hcm_english_center" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>english_center_style</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/points_of_interest/english_center/english_center.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Style name="informatics_foreign_language_center_style">
+        <Rule>
+            <MarkersSymbolizer fill="#573f4c" file="../markers/english_center.svg" transform="translate(0 -16) scale(0.07)"/>
+        </Rule>
+    </Style>
+    <Layer name="all_informatics_foreign_language_center" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>informatics_foreign_language_center_style</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/points_of_interest/informatics_foreign_language_center/informatics_foreign_language_center.shp</Parameter>
+        </Datasource>
+    </Layer>
+</Map>

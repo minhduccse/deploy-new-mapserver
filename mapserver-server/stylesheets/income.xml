@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- An ultra simple Mapnik stylesheet -->
+
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#00000000" buffer-size="256" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+    <Style name="50_percent_below">
+        <Rule>
+            <PolygonSymbolizer fill="#C8F08F" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Style name="50_percent">
+        <Rule>
+            <PolygonSymbolizer fill="#8CD211" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Style name="60_percent">
+        <Rule>
+            <PolygonSymbolizer fill="#5AA700" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Style name="70_percent">
+        <Rule>
+            <PolygonSymbolizer fill="#4C8400" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Style name="80_percent">
+        <Rule>
+            <PolygonSymbolizer fill="#144D14" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+    <Style name="90_percent">
+        <Rule>
+            <PolygonSymbolizer fill="#0C2808" />
+            <LineSymbolizer stroke="#999999" stroke-width="0" />
+        </Rule>
+    </Style>
+
+
+    <Layer name="hcm_50_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>50_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/level_0/level_0.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="hcm_60_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>60_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/level_1/level_1.shp</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hcm_70_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>70_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/level_2/level_2.shp</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hcm_80_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>80_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/level_3/level_3.shp</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hcm_90_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>90_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/level_4/level_4.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+
+
+
+
+    <Layer name="hn_50_percent_below" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>50_percent_below</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/hn_income/50_percent_below/50_percent_below.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="hn_50_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>50_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/hn_income/50_percent/50_percent.shp</Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="hn_60_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>60_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/hn_income/60_percent/60_percent.shp</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hn_70_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>70_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/hn_income/70_percent/70_percent.shp</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hn_80_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>80_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/hn_income/80_percent/80_percent.shp</Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="hn_90_percent" srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+        <StyleName>90_percent</StyleName>
+        <Datasource>
+            <Parameter name="type">shape</Parameter>
+            <Parameter name="file">../shapefiles/income/hn_income/90_percent/90_percent.shp</Parameter>
+        </Datasource>
+    </Layer>
+</Map>
